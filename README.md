@@ -57,7 +57,8 @@ authentication through the `pam_sss.so` module, which talks to the appropriate
 socket (which must be mounted, details below).
 
 - The [fedora](https://github.com/Enchufa2/docker-host-auth/tree/master/fedora)
-directory contains a Dockerfile with these minimum requirements.
+and [debian](https://github.com/Enchufa2/docker-host-auth/tree/master/debian)
+directories contain Dockerfiles with these minimum requirements.
 - The [jupyterhub](https://github.com/Enchufa2/docker-host-auth/tree/master/jupyterhub)
 directory applies this configuration to a JupyterHub image.
 
