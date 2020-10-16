@@ -12,11 +12,14 @@ RUN apt-get update \
 
 RUN pip install jupyterlab
 
+# see https://github.com/jupyterhub/jupyterhub/issues/1107
+COPY my_spawner.py /usr/lib/python3/dist-packages/
 RUN printf "\n\
 c.Spawner.default_url = '/lab'\n\
 c.JupyterHub.base_url = '/jupyter'\n\
 c.PAMAuthenticator.admin_groups = {'wheel'}\n\
-" > jupyterhub_config.py
+c.JupyterHub.spawner_class = 'my_spawner.MySpawner'\n\
+" >> jupyterhub_config.py
 
 RUN printf "\n\
 auth required pam_sss.so\n\
