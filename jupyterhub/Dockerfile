@@ -18,6 +18,7 @@ RUN printf "\n\
 c.Spawner.default_url = '/lab'\n\
 c.JupyterHub.base_url = '/jupyter'\n\
 c.PAMAuthenticator.admin_groups = {'wheel'}\n\
+c.PAMAuthenticator.allow_all = True\n\
 c.JupyterHub.spawner_class = 'my_spawner.MySpawner'\n\
 " >> jupyterhub_config.py
 
