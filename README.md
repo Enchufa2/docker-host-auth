@@ -30,11 +30,9 @@ domains = shadowutils
 [pam]
 
 [domain/shadowutils]
-id_provider = files
-
-auth_provider = proxy
+id_provider = proxy
+proxy_lib_name = files
 proxy_pam_target = sssd-shadowutils
-
 proxy_fast_alias = True
 ```
 
